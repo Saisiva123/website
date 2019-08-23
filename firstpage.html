@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+	body
+	{
+		margin:0;
+		padding:0;
+		margin-right: 0;
+	    z-index: 0;
+		padding-right: 0;
+	}
+	.nav
+	{
+		width:100%;
+		height:60px;
+		position: relative;
+		top:-3px;
+		left:-5px;
+		background-color: #f2f2f2;
+	}
+	.logo
+	{
+		width:200px;
+		height:50px;
+		position: absolute;
+		left:5px;
+		top:5px;
+		float: left;
+	
+	}
+	.logo img
+	{
+		position: absolute;
+		width:100%;
+		height:100%;
+	}
+	.menu 
+	{
+		position: absolute;
+		float: left;
+		left:53%;
+	}
+	.menu a
+	{
+		padding:15px 15px;
+		color:grey;
+		text-decoration: none;
+		position: relative;
+		font-family: sans-serif;
+		font-style: normal;
+		float:left;
+		border-right: 1px solid lightgrey;
+		top:5px;
+	}
+	.menu a:nth-child(5)
+	{
+		position: relative;
+		top:1px;
+
+	}
+	.menu a:nth-child(5):hover
+	{
+		background-color: #f2f2f2;
+	}
+	.menu a:hover
+	{
+		background-color:lightgrey;
+		color:rgb(110,157,229);
+		cursor:pointer;
+	}
+	
+	.menu a:nth-child(4):hover >span
+	{
+	    color:rgb(110,157,229);
+	}
+	.last
+	{
+		position: absolute;
+		float: right;
+		right:0;
+		background-color: #0695d7;
+		color:white;
+		width:100px;
+		z-index: 1;
+		height:96%;
+	}
+	.last:hover
+	{
+		cursor:pointer;
+	}
+	.side
+	{
+		position:fixed;
+		width:500px;
+		height: 100%;
+        right:-500px;
+        top: 0;
+        z-index: 2;
+        background-color: #f2f2f2;
+        transition: all 0.6s;
+		border-left: 10px solid  #0695d7;
+	}
+	.close
+	{
+		position: absolute;
+		top:10px;
+		right:10px;
+		font-size: 25px;
+
+	}
+	.sidenav
+	{
+		position: absolute;
+		top:60px;
+		margin-right: 0;
+		margin-left: 0;
+		width:100%;
+		height:1000px;
+		
+	}
+   .accordion {
+  background-color: #f2f2f2;
+  color: #0695d7;
+  cursor: pointer;
+  padding-top:20px;
+  padding-bottom:15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  margin-bottom: -30px;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+	margin-top: 20px;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  font-size: 15px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+.second
+{
+	margin:0;
+	width: 100%;
+	margin-top: -3px;
+	position: relative;
+	height:60px;
+	background-color: #444444;
+}
+.secondo,.secondt,.secondth,.secondf,.secondfi
+{
+		
+	width:200px;
+	height:35px;
+	position: relative;
+	left:19%;
+	top:22%;
+	float: left;
+	background-color: #444444;
+	cursor: pointer;
+	border:1px solid white;
+	font-family: 'Artifakt',sans-serif;
+	color:white;
+	text-align: left;
+	margin-left: 7px;
+}
+.secondo:hover,.secondt:hover,.secondth:hover,.secondf:hover
+{
+	background-color: #666666;
+}
+
+.secondfi
+{
+	background-color: red;
+	border:1px solid red;
+	
+}
+
+.second p
+{
+	float: left;
+	margin-left: 6px;
+	margin-top: 5px;
+}
+.second > .secondf
+{
+	width:110px;
+}
+.second > .secondf > p
+{
+	margin-left: 13px;
+}
+.second i
+{
+	float: right;
+	right:1px;
+	margin-top: 4px;
+	position: absolute;
+	font-size: 20px;
+	transition: all 0.7s;
+}
+.sein
+{
+	width:inherit;
+	height:auto;
+	z-index: -1;
+	transition: all 0.5s linear;
+	position: absolute;
+	top:-110%;
+	left:-1px;
+	display: block;
+	background-color: #444444;
+	border:1px solid white;
+}
+.sein:last-child
+{
+	top:-870%;
+}
+.secondo:hover #x
+{
+	transform: rotateZ(180deg);
+}
+.secondt:hover #y
+{
+	transform: rotateZ(180deg);
+}
+.secondth:hover #z
+{
+	transform: rotateZ(180deg);
+}
+.secondo:hover .sein
+{
+	top:120%;
+}
+.secondt:hover .sein
+{
+	top:120%;
+}
+.secondth:hover .sein
+{
+	top:120%;
+}
+.sein a
+{
+	display: block;
+	padding:10px 10px;
+	border-bottom: 1px solid white;
+	text-decoration: none;
+	color:white;
+	text-align: center;
+}
+.sein a:hover
+{
+	background-color: #666666;
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("#inside").click(function(){
+    $(".products").slideDown("slow");
+  });
+   $("#inside").mouseover(function(){
+    $(".products").slideUp("slow");
+  });
+});
+
+</script>
+
+</head>
+<body>
+<div class="nav">
+<div class="logo">
+	<img src="logo.jpg">
+</div>
+<div class="menu">
+
+<a href="#" style="color:grey;">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+        </a>
+<a><div class="search">
+	<input type="text">
+	<span class="glyphicon glyphicon-search"></span>
+</div></a>
+<a>SIGN IN</a>
+<a><i class='fas fa-globe'></i>&nbspUNITED STATES</a>
+</div>
+<div class="last" onclick="a()">
+	<i class="material-icons" style="float:left;position: absolute;top:17px;left:15px;">menu</i>
+	<span ><h5 style="float:right;right:20px;position:absolute;top:12px;">MENU</h5></span>
+</div>
+
+
+
+<div class="side" id="one">
+
+<div class="close" onclick="b()"><i class="fa fa-close"></i></div>
+
+<div class="sidenav">
+	<button class="accordion">Products</button>
+<div class="panel">
+  <p>juf yvsdfuh e fh fuvdsu hfusdiyvudsvdsjkvchd jlds i dshvd hs vds hvds hvds gvdshvds vdhgfyu efgse fywefg yeiwfgtyewi gfyew gfyewg fuyw egfyw efgyw gfy</p>
+</div>
+
+<button class="accordion">Support & Learning</button>
+<div class="panel">
+  <p>dfhdsef uefedfg egehw ghfehiw gfewh fiueh fiuse hfuies hfes hfuesh fuesh fiews hfeu hfuseh fekj hfej hfje fhei fhewh fe hfew hfiew hfewh fuiew hfiuew hfuke.</p>
+</div>
+
+<button class="accordion">Downloads</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<button class="accordion">Buy</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<button class="accordion">About Autodesk</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+</div>
+
+</div>
+
+
+
+
+</div>
+<script>
+function a()
+{
+	document.getElementById("one").style.right="0px";
+	document.body.style.backgroundColor="rgb(0,0,0,0.7)";
+}
+function b()
+{
+	document.getElementById("one").style.right="-500px";
+	document.body.style.backgroundColor="rgb(0,0,0,0)";
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+</script>
+
+<div class="second">
+
+<span style="font-family: 'Artifakt',sans-serif;position:relative;left:2%;font-size: 20px;float: left;top:18px;color:white">AutoCAD</span>
+<div class="secondo"><p>COMPARE</p><i id="x" class="material-icons">keyboard_arrow_down</i>
+<div class="sein">
+	<a>Compare releases</a>
+	<a>Compare to AutoCAD LT</a>
+</div>
+</div>
+<div class="secondt"><p>INCLUDED TOOLSETS</p><i id="y" class="material-icons">keyboard_arrow_down</i>
+<div class="sein">
+	<a>Architecture</a>
+	<a>Electrical</a>
+	<a>Mechanical</a>
+	<a>MEP</a>
+	<a>Map 3D</a>
+	<a>Plant 3D</a>
+	<a>Raster Design</a>
+	<a>See all</a>
+</div>
+</div>
+<div class="secondth"><p>SUPPORT & LEARNING</p><i id="z" class="material-icons">keyboard_arrow_down</i>
+<div class="sein">
+	<a>AutoCAD</a>
+	<a>AutoCAD Architecture</a>
+	<a>AutoCAD Electrical</a>
+	<a>AutoCAD Map 3D</a>
+	<a>AutoCAD Mechanical</a>
+	<a>AutoCAD MEP</a>
+	<a>AutoCAD Plant 3D</a>
+	<a>AutoCAD Raster Design</a>
+</div>
+</div>
+<div class="secondf"><p>FREE TRAIL</p></div>
+<div class="secondfi"><p style="margin-left: 25px;">CHOOSE YOUR PLAN</p></div>
+</div>
+
+</body>
+</html>
