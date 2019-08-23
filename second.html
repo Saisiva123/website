@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+	body
+	{
+		margin:0;
+		padding:0;
+		margin-right: 0;
+	
+		padding-right: 0;
+	}
+	.nav
+	{
+		width:100%;
+		height:60px;
+		position: relative;
+		top:-3px;
+		left:-5px;
+		z-index: 0;
+		background-color: #f2f2f2;
+	}
+	.logo
+	{
+		width:200px;
+		height:50px;
+		position: absolute;
+		left:5px;
+		top:5px;
+		float: left;
+	
+	}
+	.logo img
+	{
+		position: absolute;
+		width:100%;
+		height:100%;
+	}
+	.menu 
+	{
+		position: absolute;
+		float: left;
+		left:28%;
+	}
+	.menu a
+	{
+		padding:15px 15px;
+		color:grey;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		font-family: sans-serif;
+		font-style: normal;
+		float:left;
+		top:5px;
+		border-right: 1px solid lightgrey
+
+	}
+	.menu a:nth-child(5)
+	{
+		position: relative;
+		top:1px;
+
+	}
+	.menu a:nth-child(5):hover
+	{
+		background-color: #f2f2f2;
+	}
+	.menu a:hover
+	{
+		background-color:lightgrey;
+		color:rgb(110,157,229);
+		cursor:pointer;
+	}
+	.menu a:nth-child(4):hover >span
+	{
+	    color:rgb(110,157,229);
+	}
+
+	.last
+	{
+		position: absolute;
+		float: right;
+		right:0;
+		background-color: #0695d7;
+		color:white;
+		width:100px;
+		z-index: 1;
+		height:96%;
+	}
+	.last:hover
+	{
+		cursor:pointer;
+	}
+	.side
+	{
+		position:fixed;
+		width:500px;
+		height: 100%;
+        right:-500px;
+        top: 0;
+        z-index: 2;
+        background-color: #f2f2f2;
+        transition: all 0.6s;
+		border-left: 10px solid  #0695d7;
+	}
+	.close
+	{
+		position: absolute;
+		top:10px;
+		right:10px;
+		font-size: 25px;
+
+	}
+	.sidenav
+	{
+		position: absolute;
+		top:60px;
+		margin-right: 0;
+		margin-left: 0;
+		width:100%;
+		height:1000px;
+		
+	}
+   .accordion {
+  background-color: #f2f2f2;
+  color: #0695d7;
+  cursor: pointer;
+  padding-top:20px;
+  padding-bottom:15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  margin-bottom: -30px;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+	margin-top: 20px;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  font-size: 15px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("#inside").click(function(){
+    $(".products").slideDown("slow");
+  });
+   $("#inside").mouseover(function(){
+    $(".products").slideUp("slow");
+  });
+});
+
+</script>
+
+</head>
+<body>
+<div class="nav">
+<div class="logo">
+	<img src="logo.jpg">
+</div>
+<div class="menu">
+<a><span>FREE TRAILS</span></a>
+<a><span>ALL PRODUCTS</span></a>
+<a><span>BUY</span></a>
+<a href="#" style="color:grey;">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+ </a>
+<a><div class="search">
+	<input type="text">
+	<span class="glyphicon glyphicon-search"></span>
+</div></a>
+<a><span>SIGN IN</span>
+</a>
+<a><i class='fas fa-globe'></i>&nbsp<span>UNITED STATES</span></a>
+</div>
+<div class="last" onclick="a()">
+	<i class="material-icons" style="float:left;position: absolute;top:17px;left:15px;">menu</i>
+	<span ><h5 style="float:right;right:20px;position:absolute;top:12px;">MENU</h5></span>
+</div>
+
+
+
+<div class="side" id="one">
+
+<div class="close" onclick="b()"><i class="fa fa-close"></i></div>
+
+<div class="sidenav">
+	<button class="accordion">Products</button>
+<div class="panel">
+  <p>juf yvsdfuh e fh fuvdsu hfusdiyvudsvdsjkvchd jlds i dshvd hs vds hvds hvds gvdshvds vdhgfyu efgse fywefg yeiwfgtyewi gfyew gfyewg fuyw egfyw efgyw gfy</p>
+</div>
+
+<button class="accordion">Support & Learning</button>
+<div class="panel">
+  <p>dfhdsef uefedfg egehw ghfehiw gfewh fiueh fiuse hfuies hfes hfuesh fuesh fiews hfeu hfuseh fekj hfej hfje fhei fhewh fe hfew hfiew hfewh fuiew hfiuew hfuke.</p>
+</div>
+
+<button class="accordion">Downloads</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<button class="accordion">Buy</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<button class="accordion">About Autodesk</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+</div>
+
+</div>
+
+
+
+
+</div>
+<script>
+function a()
+{
+	document.getElementById("one").style.right="0px";
+	document.body.style.backgroundColor="rgb(0,0,0,0.7)";
+}
+function b()
+{
+	document.getElementById("one").style.right="-500px";
+	document.body.style.backgroundColor="rgb(0,0,0,0)";
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+</script>
+</body>
+</html>
