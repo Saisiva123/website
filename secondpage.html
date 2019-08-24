@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+	body
+	{
+		margin:0;
+		padding:0;
+		margin-right: 0;
+	
+		padding-right: 0;
+	}
+	.nav
+	{
+		width:100%;
+		height:60px;
+		position: relative;
+		top:-3px;
+		left:-5px;
+		z-index: 0;
+		overflow:hidden;
+		background-color: #f2f2f2;
+	}
+	.logo
+	{
+		width:200px;
+		height:50px;
+		position: absolute;
+		left:5px;
+		top:5px;
+		float: left;
+	
+	}
+	.logo img
+	{
+		position: absolute;
+		width:100%;
+		height:100%;
+	}
+	.menu 
+	{
+		position: absolute;
+		float: left;
+		left:33%;
+	}
+	.menu a
+	{
+		padding:15px 15px;
+		color:grey;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		font-family: sans-serif;
+		font-style: normal;
+		float:left;
+		top:5px;
+		border-right: 1px solid lightgrey
+	}
+	.menu a:nth-child(5)
+	{
+		position: relative;
+		top:1px;
+	}
+	.menu a:nth-child(5):hover
+	{
+		background-color: #f2f2f2;
+	}
+	.menu a:hover
+	{
+		background-color:lightgrey;
+		color:rgb(110,157,229);
+		cursor:pointer;
+	}
+	.menu a:nth-child(4):hover >span
+	{
+	    color:rgb(110,157,229);
+	}
+	.last
+	{
+		position: absolute;
+		float: right;
+		right:0px;
+		background-color: #0695d7;
+		color:white;
+		width:100px;
+		z-index: 1;
+		height:96%;
+	}
+	.last:hover
+	{
+		cursor:pointer;
+	}
+	.side
+	{
+		position: fixed;
+		overflow-y: scroll;
+		width:500px;
+		height: 100%;
+        right:-500px;
+        top: 0;
+        overflow-x: hidden;
+        z-index: 2;
+        background-color: white;
+        transition: all 0.6s;
+		border-left: 10px solid  #0695d7;
+	}
+	.close
+	{
+		position: absolute;
+		top:10px;
+		right:10px;
+		font-size: 25px;
+	}
+	.sidenav
+	{
+		position: absolute;
+		top:60px;
+		margin-right: 0;
+		margin-left: 0;
+		width:100%;
+		height:1000px;
+		
+	}
+   .accordion {
+  background-color: #f2f2f2;
+  color: #0695d7;
+  cursor: pointer;
+  padding-top:20px;
+  padding-bottom:15px;
+  width: 100%;
+  font-weight: 500;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  margin-bottom: -30px;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+	margin-top: 20px;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  font-size: 15px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2212";
+}
+#pone
+{
+	overflow-y: scroll;
+}
+.facebook
+{
+	width:100%;
+	height:auto;
+}
+.facebook span
+{
+	display: block;
+	padding: 15px 15px;
+	position: relative;
+	left:5%;
+	color:#888888;
+	font-size: 1.6rem;
+	font-family:'Artikaft'; 
+	font-weight: 700;
+}
+.facebook span:hover
+{
+	color:lightgrey;
+	cursor: pointer;
+}
+.facebook span i
+{
+	color:#888888;
+}
+.panel ul
+{
+	position: relative;
+	width:100%;
+}
+.panel ul li
+{
+	padding: 10px 15px;
+	font-size: 20px;
+	cursor: pointer;
+	border-left: 3px dotted grey;
+	list-style-type: none;
+    margin-bottom: 5px;
+    color:#666;
+    font-family: Helvetica;
+    margin-left: -10px;
+
+}
+
+.panel ul li:first-child,#mid
+{
+	color:green;
+	font-size: 25px;
+}
+.panel ul ul
+{
+	display: none;
+}
+.panel ul ul li,.panel ul ul li:first-child
+{
+	font-size: 15px;
+	color:#666;
+	border-left: 1px solid white;
+}
+#hide
+{
+	display: none;
+}
+@media only screen and (min-width:641px) and (max-width: 1000px)
+{
+	.menu a:nth-child(5) span
+	{
+		display: block;
+		margin-top: 4px;
+	}
+	.menu a:nth-child(6) span
+	{
+		display: block;
+	}
+	.last
+	{
+		right:-51px;
+	}
+	.last span
+	{
+		display: none;
+	}
+	.menu a input
+	{
+		display: none;
+	}
+	.menu a
+	{
+		border-right: 1px solid #f2f2f2;
+		font-size: 20px;
+	}
+	.menu a:last-child span
+	{
+		display: none;
+	}
+	.menu a:first-child
+	{
+        display: none;
+	}
+	.menu a:nth-child(2)
+	{
+		display: none;
+	}
+	.menu a:nth-child(3)
+	{
+		display: none;
+	}
+	.menu
+	{
+		left:60%;
+	}
+}
+@media only screen and (max-width: 640px)
+{
+	.last
+	{
+		right:-51px;
+	}
+	.last span
+	{
+		display: none;
+	}
+	.menu a input
+	{
+		display: none;
+	}
+	.menu a
+	{
+		border-right: 1px solid #f2f2f2;
+		font-size: 20px;
+	}
+	.menu a:last-child span
+	{
+		display: none;
+	}
+	.menu
+	{
+		left:50%;
+	}
+	.menu a:first-child
+	{
+        display: none;
+	}
+	.menu a:nth-child(2)
+	{
+		display: none;
+	}
+	.menu a:nth-child(5) span
+	{
+		display: block;
+		margin-top: 4px;
+	}
+	.menu a:nth-child(3)
+	{
+		display: none;
+	}
+	.menu a:nth-child(6) span
+	{
+		display: none;
+	}
+	#hide
+	{
+		display: block;
+		margin-top: -3px;
+		padding-top: 5px;
+	}
+	.menu a:last-child #globe
+	{
+		display: block;
+		margin-top: 1px;
+		padding: -15px 0px;
+	}
+
+}
+.twitter
+{
+	width: 100%;
+	height:100px;
+
+}
+.twitter i
+{
+	float: left;
+	position: relative;
+	left:5%;
+	margin-left: 25px;
+	font-size: 35px;
+	color:#888888;
+}
+.twitter i:hover
+{
+	color:lightgrey;
+	cursor: pointer;
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("#inside").click(function(){
+    $(".products").slideDown("slow");
+  });
+   $("#inside").mouseover(function(){
+    $(".products").slideUp("slow");
+  });
+   $("#plus1").click(function()
+   {
+    $("#ulli").slideToggle("slow");
+   });
+   $("#plus21").click(function()
+   {
+    $("#ulli2").slideToggle("slow");
+   });
+});
+</script>
+
+</head>
+<body>
+<div class="nav">
+<div class="logo">
+	<img src="logo.jpg">
+</div>
+<div class="menu">
+<a><span>FREE TRAILS</span></a>
+<a><span>ALL PRODUCTS</span></a>
+<a><span>BUY</span></a>
+<a href="#" style="color:grey;">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+ </a>
+<a><div class="search">
+	<input type="text">
+	<span class="glyphicon glyphicon-search"></span>
+</div></a>
+<a><span>SIGN IN</span><i id="hide" class='far fa-user-circle'></i>
+	
+</a>
+<a><i id="globe" class='fas fa-globe'></i>&nbsp<span>UNITED STATES</span></a>
+</div>
+<div class="last" onclick="a()">
+	<i class="material-icons" style="float:left;position: absolute;top:17px;left:15px;">menu</i>
+	<span ><h5 style="float:right;right:20px;position:absolute;top:12px;">MENU</h5></span>
+</div>
+
+
+
+<div class="side" id="one">
+
+<div class="close" onclick="b()"><i class="fa fa-close"></i></div>
+
+<div class="sidenav">
+	<button style="background-color: white;" class="accordion">&nbsp&nbspProducts</button>
+<div id="pone" class="panel">
+
+  	<ul>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;" class='fas fa-arrow-right'></i>&nbsp&nbspAll Products</li>
+  		<li><p id="plus" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p>&nbsp&nbsp<span id="plus1">Collections</span>
+         <ul id="ulli">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>AutoCAD</li>
+  		<li>AutoCAD LT</li>
+  		<li>AutoCAD Mobile</li>
+  		<li id="mid">File Viewers</li>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;color:green;" class='fas fa-arrow-right'></i>All Viewers</li>
+  		<li>DWG</li>
+  		<li>DWF</li>
+  		<li>Online Viewer</li>
+  		<li id="mid">Solutions</li>
+  		<li><p id="plus2" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p><span id="plus21">Industry Solutions</span>
+        <ul id="ulli2">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>Cloud and collaboration</li>
+
+  	</ul>
+
+</div>
+
+<button style="background-color: white;" class="accordion">&nbsp&nbspSupport & Learning</button>
+<div id="pone" class="panel">
+  <ul>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;" class='fas fa-arrow-right'></i>&nbsp&nbspAll Products</li>
+  		<li><p id="plus" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p>&nbsp&nbsp<span id="plus1">Collections</span>
+         <ul id="ulli">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>AutoCAD</li>
+  		<li>AutoCAD LT</li>
+  		<li>AutoCAD Mobile</li>
+  		<li id="mid">File Viewers</li>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;color:green;" class='fas fa-arrow-right'></i>All Viewers</li>
+  		<li>DWG</li>
+  		<li>DWF</li>
+  		<li>Online Viewer</li>
+  		<li id="mid">Solutions</li>
+  		<li><p id="plus2" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p><span id="plus21">Industry Solutions</span>
+        <ul id="ulli2">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>Cloud and collaboration</li>
+
+  	</ul>
+</div>
+
+<button style="background-color: white;" class="accordion">&nbsp&nbspDownloads</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<button style="background-color: white;" class="accordion">&nbsp&nbspBuy</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<button style="background-color: white;" class="accordion">&nbsp&nbspAbout Autodesk</button>
+<div class="panel">
+  <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
+</div>
+<div class="facebook">
+	<span><i class="material-icons" style="position: relative;left:-5px;top:8px;">file_download</i>&nbsp&nbspFREE TRIALS</span>
+	<span><i class='fas fa-user-graduate'></i>&nbsp&nbsp&nbsp&nbsp&nbspSTUDENST & EDUCATORS</span>
+	<span><i class='fas fa-globe-americas'></i>&nbsp&nbsp&nbsp&nbspWORLDWIDE SITES</span>
+</div>
+<hr>
+<div class="twitter">
+	<i class='fab fa-facebook'></i>
+	<i class='fab fa-twitter-square'></i>
+	<i class='fab fa-linkedin'></i>
+	<i class='fab fa-youtube'></i>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+<script>
+function a()
+{
+	document.getElementById("one").style.right="0px";
+	document.body.style.backgroundColor="rgb(0,0,0,0.7)";
+}
+function b()
+{
+	document.getElementById("one").style.right="-500px";
+	document.body.style.backgroundColor="rgb(0,0,0,0)";
+}
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight)
+    {
+      panel.style.maxHeight = null;
+    } else
+    {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</body>
+</html>
