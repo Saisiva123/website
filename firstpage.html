@@ -7,13 +7,17 @@
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+	.upper
+	{
+		z-index: 0;
+	}
 	body
 	{
 		margin:0;
 		padding:0;
 		margin-right: 0;
-	    z-index: 0;
 		padding-right: 0;
 	}
 	.nav
@@ -23,6 +27,8 @@
 		position: relative;
 		top:-3px;
 		left:-5px;
+
+		overflow:hidden;
 		background-color: #f2f2f2;
 	}
 	.logo
@@ -44,8 +50,8 @@
 	.menu 
 	{
 		position: absolute;
-		float: left;
-		left:53%;
+		float: right;
+		right:7%;
 	}
 	.menu a
 	{
@@ -53,17 +59,17 @@
 		color:grey;
 		text-decoration: none;
 		position: relative;
+		display: block;
 		font-family: sans-serif;
 		font-style: normal;
 		float:left;
-		border-right: 1px solid lightgrey;
 		top:5px;
+		border-right: 1px solid lightgrey
 	}
 	.menu a:nth-child(5)
 	{
 		position: relative;
 		top:1px;
-
 	}
 	.menu a:nth-child(5):hover
 	{
@@ -75,7 +81,6 @@
 		color:rgb(110,157,229);
 		cursor:pointer;
 	}
-	
 	.menu a:nth-child(4):hover >span
 	{
 	    color:rgb(110,157,229);
@@ -84,7 +89,7 @@
 	{
 		position: absolute;
 		float: right;
-		right:0;
+		right:0px;
 		background-color: #0695d7;
 		color:white;
 		width:100px;
@@ -97,13 +102,15 @@
 	}
 	.side
 	{
-		position:fixed;
+		position: fixed;
+		overflow-y: scroll;
 		width:500px;
 		height: 100%;
         right:-500px;
         top: 0;
+        overflow-x: hidden;
         z-index: 2;
-        background-color: #f2f2f2;
+        background-color: white;
         transition: all 0.6s;
 		border-left: 10px solid  #0695d7;
 	}
@@ -113,7 +120,6 @@
 		top:10px;
 		right:10px;
 		font-size: 25px;
-
 	}
 	.sidenav
 	{
@@ -132,6 +138,7 @@
   padding-top:20px;
   padding-bottom:15px;
   width: 100%;
+  font-weight: 500;
   border: none;
   text-align: left;
   outline: none;
@@ -158,124 +165,425 @@
   float: right;
   margin-left: 5px;
 }
-
 .active:after {
   content: "\2212";
 }
+#pone
+{
+	overflow-y: scroll;
+}
+.facebook
+{
+	width:100%;
+	height:auto;
+}
+.facebook span
+{
+	display: block;
+	padding: 15px 15px;
+	position: relative;
+	left:5%;
+	color:#888888;
+	font-size: 1.6rem;
+	font-family:'Artikaft'; 
+	font-weight: 700;
+}
+.facebook span:hover
+{
+	color:lightgrey;
+	cursor: pointer;
+}
+.facebook span i
+{
+	color:#888888;
+}
+.panel ul
+{
+	position: relative;
+	width:100%;
+}
+.panel ul li
+{
+	padding: 10px 15px;
+	font-size: 20px;
+	cursor: pointer;
+	border-left: 3px dotted grey;
+	list-style-type: none;
+    margin-bottom: 5px;
+    color:#666;
+    font-family: Helvetica;
+    margin-left: -10px;
+}
+.panel ul li:first-child,#mid
+{
+	color:green;
+	font-size: 25px;
+}
+.panel ul ul
+{
+	display: none;
+}
+.panel ul ul li,.panel ul ul li:first-child
+{
+	font-size: 15px;
+	color:#666;
+	border-left: 1px solid white;
+}
+#hide
+{
+	display: none;
+}
+@media only screen and (min-width:601px) and (max-width: 1100px)
+{
+	.menu a:nth-child(5) span
+	{
+		display: block;
+		margin-top: 4px;
+	}
+	.menu a:nth-child(6) span
+	{
+		display: block;
+	}
+	.last
+	{
+		right:-51px;
+	}
+	.last span
+	{
+		display: none;
+	}
+	.menu a input
+	{
+		display: none;
+	}
+	.menu a
+	{
+		border-right: 1px solid #f2f2f2;
+		font-size: 20px;
+	}
+	.menu a:last-child span
+	{
+		display: none;
+	}
+	.menu a:first-child
+	{
+        display: none;
+	}
+	.menu a:nth-child(2)
+	{
+		display: none;
+	}
+	.menu a:nth-child(3)
+	{
+		display: none;
+	}
+	.menu
+	{
+		left:63%;
+	}
+}
+@media only screen and (max-width: 600px)
+{
+	
+	.last
+	{
+		right:-51px;
+	}
+	.last span
+	{
+		display: none;
+	}
+	.menu a input
+	{
+		display: none;
+	}
+	.menu a
+	{
+		border-right: 1px solid #f2f2f2;
+		font-size: 20px;
+	}
+	.menu a:last-child span
+	{
+		display: none;
+	}
+	.menu
+	{
+		left:50%;
+	}
+	.menu a:first-child
+	{
+        display: none;
+	}
+	.menu a:nth-child(2)
+	{
+		display: none;
+	}
+	.menu a:nth-child(5) span
+	{
+		display: block;
+		margin-top: 4px;
+	}
+	.menu a:nth-child(3)
+	{
+		display: none;
+	}
+	.menu a:nth-child(6) span
+	{
+		display: none;
+	}
+	#hide
+	{
+		display: block;
+		margin-top: -3px;
+		padding-top: 5px;
+	}
+	.menu a:last-child #globe
+	{
+		display: block;
+		margin-top: 1px;
+		padding: -15px 0px;
+	}
+}
+.twitter
+{
+	width: 100%;
+	height:100px;
+}
+.twitter i
+{
+	float: left;
+	position: relative;
+	left:5%;
+	margin-left: 25px;
+	font-size: 35px;
+	color:#888888;
+}
+.twitter i:hover
+{
+	color:lightgrey;
+	cursor: pointer;
+}
 .second
 {
-	margin:0;
-	width: 100%;
-	margin-top: -3px;
-	position: relative;
-	height:60px;
-	background-color: #444444;
+  margin:0;
+  width: 100%;
+
+  margin-top: -3px;
+  position: relative;
+  min-height: 60px;
+  background-color: #444444;
 }
-.secondo,.secondt,.secondth,.secondf,.secondfi
+.second ul
 {
-		
-	width:200px;
-	height:35px;
-	position: relative;
-	left:19%;
-	top:22%;
-	float: left;
-	background-color: #444444;
-	cursor: pointer;
-	border:1px solid white;
-	font-family: 'Artifakt',sans-serif;
-	color:white;
-	text-align: left;
-	margin-left: 7px;
+  position: relative;
+  float: right;
+  margin-right:5px;
+  margin-top:16px;
+
 }
-.secondo:hover,.secondt:hover,.secondth:hover,.secondf:hover
+.second ul a
 {
-	background-color: #666666;
+  float: left;
+  text-decoration: none;
+}
+.second ul i
+{
+  float: right;
+  margin-top: 1px;
+  transition: all 0.7s;
+}
+.second ul li:hover i
+{
+  transform: rotateZ(180deg);
+}
+.second ul li:hover
+{
+  background-color: #777;
+  cursor: pointer;
+}
+.second ul li
+{
+  display: inline-block;
+  border:1px solid white;
+  text-align: left;
+  width:210px;
+  height:auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color:white;
+}
+.second #free
+{
+  width: auto;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 7px;
+  padding-bottom: 8px;
 }
 
-.secondfi
+.second ul li:last-child
 {
-	background-color: red;
-	border:1px solid red;
-	
+  background-color: #DD2222;
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 8px;
 }
+.second li a
+{
+  color:white;
+  font-size: 15px;
+}
+.second span
+{
+  position: relative;
+  left:2%;
+  top:18px;
+  color:white;
+  float:left;
+  font-size: 20px;
+  font-family: 'Artifakt',sans-serif;
+}
+#myDropdown
+{
+  display: none;
+}
+.second ul ul
+{
+  position: absolute;
+  width:inherit;
+  top: 58%;
+  margin-left:-47px;
+  height:auto;
+  display: none;
+}
+.second #twop:hover #two
+{
+  display: block;
+}
+.second #onep:hover #one
+{
+  display: block;
+}
+.second #threep:hover #three
+{
+  display: block;
+}
+.second ul ul li
+{
+  text-align: center;
+  background-color: #777;
+  border:1px solid white;
+}
+.second ul ul li:last-child
+{
+  background-color: #777;
+}
+.second ul li
+{
 
-.second p
-{
-	float: left;
-	margin-left: 6px;
-	margin-top: 5px;
+  background-color: #444444;
+  color:white;
+  padding:5px 5px;
 }
-.second > .secondf
+#last
 {
-	width:110px;
+  float:right;
+  right:10px;
+  font-size: 25px;
+  margin-top: 17px;
+  color:white;
+  display: none;
+  cursor: pointer;
+  position: absolute;
 }
-.second > .secondf > p
+@media only screen and (max-width: 540px)
 {
-	margin-left: 13px;
+  #last
+  {
+    display: block;
+  }
+  .second span
+  {
+    float: left;
+  }
+  .second #last
+  {
+    position: absolute;
+    float: right;
+    right:5px;
+  }
+  .second
+  {
+    height:auto;
+  }
+  .last
+  {
+    font-size:20px;
+    left:90%;
+  }
+   #onep
+  {
+    display: none;
+  }
+  #twop
+  {
+    display: none;
+  }
+  #threep
+  {
+    display: none;
+  }
+  .second 
+  {
+    float: none;
+    background-color: #717070;
+  }
+
+  .second ul
+  {
+    width:100%;
+    height:auto;
+    margin:0;
+    padding-top: 10px;
+    margin-top:32px;
+    background-color:#444444 !important;
+  }
+  .second ul ul
+  {
+    margin-top: -15px;
+
+  }
 }
-.second i
+@media only screen and (min-width:541px) and (max-width: 1100px)
 {
-	float: right;
-	right:1px;
-	margin-top: 4px;
-	position: absolute;
-	font-size: 20px;
-	transition: all 0.7s;
-}
-.sein
-{
-	width:inherit;
-	height:auto;
-	z-index: -1;
-	transition: all 0.5s linear;
-	position: absolute;
-	top:-110%;
-	left:-1px;
-	display: block;
-	background-color: #444444;
-	border:1px solid white;
-}
-.sein:last-child
-{
-	top:-870%;
-}
-.secondo:hover #x
-{
-	transform: rotateZ(180deg);
-}
-.secondt:hover #y
-{
-	transform: rotateZ(180deg);
-}
-.secondth:hover #z
-{
-	transform: rotateZ(180deg);
-}
-.secondo:hover .sein
-{
-	top:120%;
-}
-.secondt:hover .sein
-{
-	top:120%;
-}
-.secondth:hover .sein
-{
-	top:120%;
-}
-.sein a
-{
-	display: block;
-	padding:10px 10px;
-	border-bottom: 1px solid white;
-	text-decoration: none;
-	color:white;
-	text-align: center;
-}
-.sein a:hover
-{
-	background-color: #666666;
+  #last
+  {
+    display: none;
+  }
+  .second 
+  {
+    float: none;
+    background-color: #717070;
+  }
+  .second ul
+  {
+    width:100%;
+    height:auto;
+    margin:0;
+    padding-top: 10px;
+    margin-top:32px;
+    background-color:#444444 !important;
+  }
+  .second ul ul
+  {
+    margin-top: -12px;
+
+  }
+   #three
+  {
+    position:absolute;
+    top:98%;
+  }
 }
 </style>
 <script>
@@ -286,27 +594,39 @@ $(document).ready(function(){
    $("#inside").mouseover(function(){
     $(".products").slideUp("slow");
   });
+   $("#plus1").click(function()
+   {
+    $("#ulli").slideToggle("slow");
+   });
+   $("#plus21").click(function()
+   {
+    $("#ulli2").slideToggle("slow");
+   });
 });
-
 </script>
 
 </head>
 <body>
+	<div class="upper">
 <div class="nav">
 <div class="logo">
 	<img src="logo.jpg">
 </div>
 <div class="menu">
-
+<a><span>FREE TRAILS</span></a>
+<a><span>ALL PRODUCTS</span></a>
+<a><span>BUY</span></a>
 <a href="#" style="color:grey;">
           <span class="glyphicon glyphicon-shopping-cart"></span>
-        </a>
+ </a>
 <a><div class="search">
 	<input type="text">
 	<span class="glyphicon glyphicon-search"></span>
 </div></a>
-<a>SIGN IN</a>
-<a><i class='fas fa-globe'></i>&nbspUNITED STATES</a>
+<a><span>SIGN IN</span><i id="hide" class='far fa-user-circle'></i>
+	
+</a>
+<a><i id="globe" class='fas fa-globe'></i>&nbsp<span>UNITED STATES</span></a>
 </div>
 <div class="last" onclick="a()">
 	<i class="material-icons" style="float:left;position: absolute;top:17px;left:15px;">menu</i>
@@ -320,36 +640,144 @@ $(document).ready(function(){
 <div class="close" onclick="b()"><i class="fa fa-close"></i></div>
 
 <div class="sidenav">
-	<button class="accordion">Products</button>
-<div class="panel">
-  <p>juf yvsdfuh e fh fuvdsu hfusdiyvudsvdsjkvchd jlds i dshvd hs vds hvds hvds gvdshvds vdhgfyu efgse fywefg yeiwfgtyewi gfyew gfyewg fuyw egfyw efgyw gfy</p>
+	<button style="background-color: white;" class="accordion">&nbsp&nbspProducts</button>
+<div id="pone" class="panel">
+
+  	<ul>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;" class='fas fa-arrow-right'></i>&nbsp&nbspAll Products</li>
+  		<li><p id="plus" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p>&nbsp&nbsp<span id="plus1">Collections</span>
+         <ul id="ulli">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>AutoCAD</li>
+  		<li>AutoCAD LT</li>
+  		<li>AutoCAD Mobile</li>
+  		<li id="mid">File Viewers</li>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;color:green;" class='fas fa-arrow-right'></i>All Viewers</li>
+  		<li>DWG</li>
+  		<li>DWF</li>
+  		<li>Online Viewer</li>
+  		<li id="mid">Solutions</li>
+  		<li><p id="plus2" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p><span id="plus21">Industry Solutions</span>
+        <ul id="ulli2">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>Cloud and collaboration</li>
+
+  	</ul>
+
 </div>
 
-<button class="accordion">Support & Learning</button>
-<div class="panel">
-  <p>dfhdsef uefedfg egehw ghfehiw gfewh fiueh fiuse hfuies hfes hfuesh fuesh fiews hfeu hfuseh fekj hfej hfje fhei fhewh fe hfew hfiew hfewh fuiew hfiuew hfuke.</p>
+<button style="background-color: white;" class="accordion">&nbsp&nbspSupport & Learning</button>
+<div id="pone" class="panel">
+  <ul>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;" class='fas fa-arrow-right'></i>&nbsp&nbspAll Products</li>
+  		<li><p id="plus" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p>&nbsp&nbsp<span id="plus1">Collections</span>
+         <ul id="ulli">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>AutoCAD</li>
+  		<li>AutoCAD LT</li>
+  		<li>AutoCAD Mobile</li>
+  		<li id="mid">File Viewers</li>
+  		<li><i style="font-size:15px;margin-left:-20px;margin-top: -5px;color:green;" class='fas fa-arrow-right'></i>All Viewers</li>
+  		<li>DWG</li>
+  		<li>DWF</li>
+  		<li>Online Viewer</li>
+  		<li id="mid">Solutions</li>
+  		<li><p id="plus2" style="color:green;font-size:20px;font-weight:bold;float: left;margin-top: 1px;margin-left: -15px;">+</p><span id="plus21">Industry Solutions</span>
+        <ul id="ulli2">
+         	<li>Architecture,Engineering & Construction</li>
+         	<li>Product Design & Manufacturing</li>
+         	<li>Media & Entertainment</li>
+         </ul>
+  		</li>
+  		<li>Cloud and collaboration</li>
+
+  	</ul>
 </div>
 
-<button class="accordion">Downloads</button>
+<button style="background-color: white;" class="accordion">&nbsp&nbspDownloads</button>
 <div class="panel">
   <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
 </div>
-<button class="accordion">Buy</button>
+<button style="background-color: white;" class="accordion">&nbsp&nbspBuy</button>
 <div class="panel">
   <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
 </div>
-<button class="accordion">About Autodesk</button>
+<button style="background-color: white;" class="accordion">&nbsp&nbspAbout Autodesk</button>
 <div class="panel">
   <p>jkdgch sdugfuds gfsdhfg dsfuief yue fuie fu hfusd hfuv hfud fvud fv hfviu vui hdsu vhuids hudhs vdvd uvdsovhdsv dskuv hdus hvudsihv dus vdsu vhdsiu vhusih</p>
 </div>
+<div class="facebook">
+	<span><i class="material-icons" style="position: relative;left:-5px;top:8px;">file_download</i>&nbsp&nbspFREE TRIALS</span>
+	<span><i class='fas fa-user-graduate'></i>&nbsp&nbsp&nbsp&nbsp&nbspSTUDENST & EDUCATORS</span>
+	<span><i class='fas fa-globe-americas'></i>&nbsp&nbsp&nbsp&nbspWORLDWIDE SITES</span>
+</div>
+<hr>
+<div class="twitter">
+	<i class='fab fa-facebook'></i>
+	<i class='fab fa-twitter-square'></i>
+	<i class='fab fa-linkedin'></i>
+	<i class='fab fa-youtube'></i>
+</div>
+</div>
 </div>
 
-</div>
-
 
 
 
 </div>
+<div class="second">
+
+<span>AutoCAD</span>
+
+<ul>
+  <li id="onep"><a>COMPARE</a><i  class="material-icons">keyboard_arrow_down</i>
+  <ul id="one">
+    <li>how</li>
+    <li>are you</li>
+
+  </ul></li>
+  <li id="twop"><a>INCLUDED TOOLSETS</a><i  class="material-icons">keyboard_arrow_down</i>
+  <ul id="two">
+    <li>how</li>
+    <li>are you</li>
+    <li>my boy</li>
+  </ul></li>
+  <li id="threep"><a>SUPPORT & LEARNING</a><i  class="material-icons">keyboard_arrow_down</i>
+    <ul id="three">
+    <li>are you</li>
+    <li>my boy</li>
+  </ul>
+  </li>
+  <li id="free" style="text-align: center;"><a>FREE TRIAL</a></li>
+  <li><a>CHOOSE YOUR PLANS</a></li>
+</ul>
+<i id="last" class="material-icons">keyboard_arrow_down</i>
+</div>
+</div>
+
+<script>
+  $(document).ready(function()
+    {
+      $("#last").click(function()
+      {
+        $("#onep").css("display","inline-block");
+        $("#twop").css("display","inline-block");
+        $("#threep").css("display","inline-block");
+      })
+    });
+</script>
 <script>
 function a()
 {
@@ -361,60 +789,21 @@ function b()
 	document.getElementById("one").style.right="-500px";
 	document.body.style.backgroundColor="rgb(0,0,0,0)";
 }
-
 var acc = document.getElementsByClassName("accordion");
 var i;
-
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
+    if (panel.style.maxHeight)
+    {
       panel.style.maxHeight = null;
-    } else {
+    } else
+    {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
 }
-
 </script>
-
-<div class="second">
-
-<span style="font-family: 'Artifakt',sans-serif;position:relative;left:2%;font-size: 20px;float: left;top:18px;color:white">AutoCAD</span>
-<div class="secondo"><p>COMPARE</p><i id="x" class="material-icons">keyboard_arrow_down</i>
-<div class="sein">
-	<a>Compare releases</a>
-	<a>Compare to AutoCAD LT</a>
-</div>
-</div>
-<div class="secondt"><p>INCLUDED TOOLSETS</p><i id="y" class="material-icons">keyboard_arrow_down</i>
-<div class="sein">
-	<a>Architecture</a>
-	<a>Electrical</a>
-	<a>Mechanical</a>
-	<a>MEP</a>
-	<a>Map 3D</a>
-	<a>Plant 3D</a>
-	<a>Raster Design</a>
-	<a>See all</a>
-</div>
-</div>
-<div class="secondth"><p>SUPPORT & LEARNING</p><i id="z" class="material-icons">keyboard_arrow_down</i>
-<div class="sein">
-	<a>AutoCAD</a>
-	<a>AutoCAD Architecture</a>
-	<a>AutoCAD Electrical</a>
-	<a>AutoCAD Map 3D</a>
-	<a>AutoCAD Mechanical</a>
-	<a>AutoCAD MEP</a>
-	<a>AutoCAD Plant 3D</a>
-	<a>AutoCAD Raster Design</a>
-</div>
-</div>
-<div class="secondf"><p>FREE TRAIL</p></div>
-<div class="secondfi"><p style="margin-left: 25px;">CHOOSE YOUR PLAN</p></div>
-</div>
-
 </body>
 </html>
